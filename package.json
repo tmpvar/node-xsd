@@ -1,0 +1,16 @@
+{
+  "author": "Elijah Insua <tmpvar@gmail.com>",
+  "name": "xsd",
+  "description": "xsd tools for node",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~v0.4.10-pre"
+  },
+  "dependencies": {
+    "sax" : "*"
+  },
+  "devDependencies": {}
+}

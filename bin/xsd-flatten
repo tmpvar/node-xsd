@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+var xsd = require(__dirname + '/../');
+
+xsd.fileToFlatJSON(process.argv[2], function(error, data) {
+  console.log(JSON.stringify(data, null, '  '));
+});
+
