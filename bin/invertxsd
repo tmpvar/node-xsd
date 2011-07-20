@@ -2,7 +2,11 @@
 
 var xsd = require(__dirname + '/../');
 
+if (process.argv.length < 3) {
+  console.log('Usage: xsd <filename>.xsd');
+  process.exit();
+}
+
 xsd.fileToFlatJSON(process.argv[2], function(error, data) {
   console.log(JSON.stringify(data, null, '  '));
 });
-

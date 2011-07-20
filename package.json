@@ -7,10 +7,14 @@
     "url": ""
   },
   "engines": {
-    "node": "~v0.4.10-pre"
+    "node": ">=0.4.0"
   },
   "dependencies": {
     "sax" : "*"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "bin" : {
+    "xsd" : "./bin/invertxsd"
+  }
 }
+
