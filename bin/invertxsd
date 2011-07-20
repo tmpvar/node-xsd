@@ -3,7 +3,7 @@
 var xsd = require(__dirname + '/../');
 
 if (process.argv.length < 3) {
-  console.log('Usage: xsd <filename>.xsd');
+  console.log('Usage: invertxsd <filename>.xsd');
   process.exit();
 }
 

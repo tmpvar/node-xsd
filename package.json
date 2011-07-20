@@ -14,7 +14,7 @@
   },
   "devDependencies": {},
   "bin" : {
-    "xsd" : "./bin/invertxsd"
+    "invertxsd" : "./bin/invertxsd"
   }
 }
 
