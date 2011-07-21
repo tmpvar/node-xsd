@@ -1,4 +1,4 @@
-# node-xsd
+# node-xsd (zed.zed.uno)
 
 Some tools for working with xsd's
 
@@ -36,6 +36,8 @@ the result is json being pumped into your stdout
 
     });
 
+## TODO
 
-
+ * Add support for `xs:import` and friends
+ * test coverage
 
