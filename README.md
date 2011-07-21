@@ -1,4 +1,4 @@
-# node-xsd (zed.zed.uno)
+# node-xsd (zed.zed.dos)
 
 Some tools for working with xsd's
 

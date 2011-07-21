@@ -2,7 +2,7 @@
   "author": "Elijah Insua <tmpvar@gmail.com>",
   "name": "xsd",
   "description": "xsd tools for node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": ""
   },
