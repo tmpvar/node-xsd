@@ -1,0 +1,3621 @@
+{
+  "xs:openAttrs": {
+    "type": "xs:complexType",
+    "name": "xs:openAttrs",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:anyType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:annotated": {
+    "type": "xs:complexType",
+    "name": "xs:annotated",
+    "derivedFrom": [
+      {
+        "type": "xs:ID",
+        "name": "xs:id"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:openAttrs"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:schemaTop": {
+    "type": "xs:group",
+    "name": "xs:schemaTop",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:notation"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:attribute"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:element"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:redefinable"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:redefinable": {
+    "type": "xs:group",
+    "name": "xs:redefinable",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:attributeGroup"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:group"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:complexType"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:simpleType"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:formChoice": {
+    "type": "xs:simpleType",
+    "name": "xs:formChoice",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "unqualified"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "qualified"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NMTOKEN"
+      }
+    ]
+  },
+  "xs:reducedDerivationControl": {
+    "type": "xs:simpleType",
+    "name": "xs:reducedDerivationControl",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "restriction"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "extension"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:derivationControl"
+      }
+    ]
+  },
+  "xs:derivationSet": {
+    "type": "xs:simpleType",
+    "name": "xs:derivationSet",
+    "derivedFrom": [
+      {
+        "type": "xs:list",
+        "name": "xs:list",
+        "itemType": "xs:reducedDerivationControl"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "#all"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union"
+      }
+    ]
+  },
+  "xs:typeDerivationControl": {
+    "type": "xs:simpleType",
+    "name": "xs:typeDerivationControl",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "union"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "list"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "restriction"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "extension"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:derivationControl"
+      }
+    ]
+  },
+  "xs:fullDerivationSet": {
+    "type": "xs:simpleType",
+    "name": "xs:fullDerivationSet",
+    "derivedFrom": [
+      {
+        "type": "xs:list",
+        "name": "xs:list",
+        "itemType": "xs:typeDerivationControl"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "#all"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union"
+      }
+    ]
+  },
+  "xs:schema": {
+    "type": "xs:element",
+    "name": "xs:schema",
+    "derivedFrom": [
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": ".//xs:key|.//xs:unique|.//xs:keyref"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:identityConstraint"
+      },
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": "xs:notation"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:notation"
+      },
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": "xs:attributeGroup"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:attributeGroup"
+      },
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": "xs:group"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:group"
+      },
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": "xs:complexType|xs:simpleType"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:type"
+      },
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": "xs:attribute"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:attribute"
+      },
+      {
+        "type": "xs:field",
+        "name": "xs:field",
+        "xpath": "@name"
+      },
+      {
+        "type": "xs:selector",
+        "name": "xs:selector",
+        "xpath": "xs:element"
+      },
+      {
+        "type": "xs:key",
+        "name": "xs:element"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:attribute",
+        "ref": "xml:lang"
+      },
+      {
+        "type": "xs:ID",
+        "name": "xs:id"
+      },
+      {
+        "type": "xs:formChoice",
+        "name": "xs:elementFormDefault",
+        "use": "optional",
+        "default": "unqualified"
+      },
+      {
+        "type": "xs:formChoice",
+        "name": "xs:attributeFormDefault",
+        "use": "optional",
+        "default": "unqualified"
+      },
+      {
+        "type": "xs:blockSet",
+        "name": "xs:blockDefault",
+        "use": "optional",
+        "default": ""
+      },
+      {
+        "type": "xs:fullDerivationSet",
+        "name": "xs:finalDefault",
+        "use": "optional",
+        "default": ""
+      },
+      {
+        "type": "xs:token",
+        "name": "xs:version"
+      },
+      {
+        "type": "xs:anyURI",
+        "name": "xs:targetNamespace"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:schemaTop"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:redefine"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:import"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:include"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:openAttrs"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:allNNI": {
+    "type": "xs:simpleType",
+    "name": "xs:allNNI",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "unbounded"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NMTOKEN"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union",
+        "memberTypes": "xs:nonNegativeInteger"
+      }
+    ]
+  },
+  "xs:occurs": {
+    "type": "xs:attributeGroup",
+    "name": "xs:occurs",
+    "derivedFrom": [
+      {
+        "type": "xs:allNNI",
+        "name": "xs:maxOccurs",
+        "use": "optional",
+        "default": "1"
+      },
+      {
+        "type": "xs:nonNegativeInteger",
+        "name": "xs:minOccurs",
+        "use": "optional",
+        "default": "1"
+      }
+    ]
+  },
+  "xs:defRef": {
+    "type": "xs:attributeGroup",
+    "name": "xs:defRef",
+    "derivedFrom": [
+      {
+        "type": "xs:QName",
+        "name": "xs:ref"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name"
+      }
+    ]
+  },
+  "xs:typeDefParticle": {
+    "type": "xs:group",
+    "name": "xs:typeDefParticle",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:sequence"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:choice"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:all"
+      },
+      {
+        "type": "xs:groupRef",
+        "name": "xs:group"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:nestedParticle": {
+    "type": "xs:group",
+    "name": "xs:nestedParticle",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:any"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:sequence"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:choice"
+      },
+      {
+        "type": "xs:groupRef",
+        "name": "xs:group"
+      },
+      {
+        "type": "xs:localElement",
+        "name": "xs:element"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:particle": {
+    "type": "xs:group",
+    "name": "xs:particle",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:any"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:sequence"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:choice"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:all"
+      },
+      {
+        "type": "xs:groupRef",
+        "name": "xs:group"
+      },
+      {
+        "type": "xs:localElement",
+        "name": "xs:element"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:attribute": {
+    "type": "xs:topLevelAttribute",
+    "name": "xs:attribute"
+  },
+  "xs:topLevelAttribute": {
+    "type": "xs:complexType",
+    "name": "xs:topLevelAttribute",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:use",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:form",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:ref",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:attribute"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:attrDecls": {
+    "type": "xs:group",
+    "name": "xs:attrDecls",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:anyAttribute",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:attributeGroupRef",
+        "name": "xs:attributeGroup"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:attribute"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      }
+    ]
+  },
+  "xs:anyAttribute": {
+    "type": "xs:wildcard",
+    "name": "xs:anyAttribute"
+  },
+  "xs:complexTypeModel": {
+    "type": "xs:group",
+    "name": "xs:complexTypeModel",
+    "derivedFrom": [
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:typeDefParticle",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:complexContent"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:simpleContent"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:complexType": {
+    "type": "xs:topLevelComplexType",
+    "name": "xs:complexType"
+  },
+  "xs:topLevelComplexType": {
+    "type": "xs:complexType",
+    "name": "xs:topLevelComplexType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:complexTypeModel"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:complexType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:localComplexType": {
+    "type": "xs:complexType",
+    "name": "xs:localComplexType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:block",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:final",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:abstract",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:name",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:complexTypeModel"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:complexType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:restrictionType": {
+    "type": "xs:complexType",
+    "name": "xs:restrictionType",
+    "derivedFrom": [
+      {
+        "type": "xs:QName",
+        "name": "xs:base",
+        "use": "required"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:simpleRestrictionModel"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:typeDefParticle"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:complexRestrictionType": {
+    "type": "xs:complexType",
+    "name": "xs:complexRestrictionType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:typeDefParticle"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:restrictionType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:extensionType": {
+    "type": "xs:complexType",
+    "name": "xs:extensionType",
+    "derivedFrom": [
+      {
+        "type": "xs:QName",
+        "name": "xs:base",
+        "use": "required"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:typeDefParticle",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:complexContent": {
+    "type": "xs:element",
+    "name": "xs:complexContent",
+    "derivedFrom": [
+      {
+        "type": "xs:boolean",
+        "name": "xs:mixed"
+      },
+      {
+        "type": "xs:extensionType",
+        "name": "xs:extension"
+      },
+      {
+        "type": "xs:complexRestrictionType",
+        "name": "xs:restriction"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:simpleRestrictionType": {
+    "type": "xs:complexType",
+    "name": "xs:simpleRestrictionType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:simpleRestrictionModel"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:restrictionType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:simpleExtensionType": {
+    "type": "xs:complexType",
+    "name": "xs:simpleExtensionType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:extensionType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:simpleContent": {
+    "type": "xs:element",
+    "name": "xs:simpleContent",
+    "derivedFrom": [
+      {
+        "type": "xs:simpleExtensionType",
+        "name": "xs:extension"
+      },
+      {
+        "type": "xs:simpleRestrictionType",
+        "name": "xs:restriction"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:blockSet": {
+    "type": "xs:simpleType",
+    "name": "xs:blockSet",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "substitution"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "restriction"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "extension"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:derivationControl"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:list",
+        "name": "xs:list"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "#all"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union"
+      }
+    ]
+  },
+  "xs:element": {
+    "type": "xs:topLevelElement",
+    "name": "xs:element"
+  },
+  "xs:topLevelElement": {
+    "type": "xs:complexType",
+    "name": "xs:topLevelElement",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:maxOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:minOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:form",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:ref",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:identityConstraint",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:localComplexType",
+        "name": "xs:complexType"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:element"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:localElement": {
+    "type": "xs:complexType",
+    "name": "xs:localElement",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:abstract",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:final",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:substitutionGroup",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:identityConstraint",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:localComplexType",
+        "name": "xs:complexType"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:element"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:group": {
+    "type": "xs:namedGroup",
+    "name": "xs:group"
+  },
+  "xs:realGroup": {
+    "type": "xs:complexType",
+    "name": "xs:realGroup",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:sequence"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:choice"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:all"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0",
+        "maxOccurs": "1"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:group"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:namedGroup": {
+    "type": "xs:complexType",
+    "name": "xs:namedGroup",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:maxOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:minOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:ref",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:simpleExplicitGroup",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:simpleExplicitGroup",
+        "name": "xs:choice"
+      },
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:maxOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:minOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:allModel"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:all"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:all"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "1",
+        "maxOccurs": "1"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:realGroup"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:groupRef": {
+    "type": "xs:complexType",
+    "name": "xs:groupRef",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:name",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:QName",
+        "name": "xs:ref",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:realGroup"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:explicitGroup": {
+    "type": "xs:complexType",
+    "name": "xs:explicitGroup",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:QName",
+        "name": "xs:ref",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:nestedParticle",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:group"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:simpleExplicitGroup": {
+    "type": "xs:complexType",
+    "name": "xs:simpleExplicitGroup",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:maxOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:minOccurs",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:nestedParticle",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:explicitGroup"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:allModel": {
+    "type": "xs:group",
+    "name": "xs:allModel",
+    "derivedFrom": [
+      {
+        "type": "xs:narrowMaxMin",
+        "name": "xs:element"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      }
+    ]
+  },
+  "xs:narrowMaxMin": {
+    "type": "xs:complexType",
+    "name": "xs:narrowMaxMin",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "1"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "0"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:allNNI"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:maxOccurs",
+        "use": "optional",
+        "default": "1"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "1"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "0"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:nonNegativeInteger"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:minOccurs",
+        "use": "optional",
+        "default": "1"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:identityConstraint",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:localComplexType",
+        "name": "xs:complexType"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:localElement"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:all": {
+    "type": "xs:all",
+    "name": "xs:all"
+  },
+  "xs:choice": {
+    "type": "xs:explicitGroup",
+    "name": "xs:choice"
+  },
+  "xs:sequence": {
+    "type": "xs:explicitGroup",
+    "name": "xs:sequence"
+  },
+  "xs:wildcard": {
+    "type": "xs:complexType",
+    "name": "xs:wildcard",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "strict"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "lax"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "skip"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NMTOKEN"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:processContents",
+        "use": "optional",
+        "default": "strict"
+      },
+      {
+        "type": "xs:namespaceList",
+        "name": "xs:namespace",
+        "use": "optional",
+        "default": "##any"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:any": {
+    "type": "xs:element",
+    "name": "xs:any",
+    "derivedFrom": [
+      {
+        "type": "xs:attributeGroup",
+        "name": "xs:attributeGroup",
+        "ref": "xs:occurs"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:wildcard"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:namespaceList": {
+    "type": "xs:simpleType",
+    "name": "xs:namespaceList",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "##local"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "##targetNamespace"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union",
+        "memberTypes": "xs:anyURI"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:list",
+        "name": "xs:list"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "##other"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "##any"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union"
+      }
+    ]
+  },
+  "xs:attributeGroup": {
+    "type": "xs:namedAttributeGroup",
+    "name": "xs:attributeGroup"
+  },
+  "xs:namedAttributeGroup": {
+    "type": "xs:complexType",
+    "name": "xs:namedAttributeGroup",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:ref",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:attrDecls"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:attributeGroup"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:attributeGroupRef": {
+    "type": "xs:complexType",
+    "name": "xs:attributeGroupRef",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:name",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:QName",
+        "name": "xs:ref",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:attributeGroup"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:include": {
+    "type": "xs:element",
+    "name": "xs:include",
+    "derivedFrom": [
+      {
+        "type": "xs:anyURI",
+        "name": "xs:schemaLocation",
+        "use": "required"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:redefine": {
+    "type": "xs:element",
+    "name": "xs:redefine",
+    "derivedFrom": [
+      {
+        "type": "xs:ID",
+        "name": "xs:id"
+      },
+      {
+        "type": "xs:anyURI",
+        "name": "xs:schemaLocation",
+        "use": "required"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:redefinable"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:openAttrs"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:import": {
+    "type": "xs:element",
+    "name": "xs:import",
+    "derivedFrom": [
+      {
+        "type": "xs:anyURI",
+        "name": "xs:schemaLocation"
+      },
+      {
+        "type": "xs:anyURI",
+        "name": "xs:namespace"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:selector": {
+    "type": "xs:element",
+    "name": "xs:selector",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "(\\.//)?(((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.)(/(((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.))*(\\|(\\.//)?(((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.)(/(((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.))*)*"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:xpath",
+        "use": "required"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:field": {
+    "type": "xs:element",
+    "name": "xs:field",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "(\\.//)?((((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.)/)*((((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.)|((attribute::|@)((\\i\\c*:)?(\\i\\c*|\\*))))(\\|(\\.//)?((((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.)/)*((((child::)?((\\i\\c*:)?(\\i\\c*|\\*)))|\\.)|((attribute::|@)((\\i\\c*:)?(\\i\\c*|\\*)))))*"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:xpath",
+        "use": "required"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:keybase": {
+    "type": "xs:complexType",
+    "name": "xs:keybase",
+    "derivedFrom": [
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:field",
+        "minOccurs": "1",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:selector"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:identityConstraint": {
+    "type": "xs:group",
+    "name": "xs:identityConstraint",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:keyref"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:key"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:unique"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:unique": {
+    "type": "xs:keybase",
+    "name": "xs:unique"
+  },
+  "xs:key": {
+    "type": "xs:keybase",
+    "name": "xs:key"
+  },
+  "xs:keyref": {
+    "type": "xs:element",
+    "name": "xs:keyref",
+    "derivedFrom": [
+      {
+        "type": "xs:QName",
+        "name": "xs:refer",
+        "use": "required"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:keybase"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:notation": {
+    "type": "xs:element",
+    "name": "xs:notation",
+    "derivedFrom": [
+      {
+        "type": "xs:anyURI",
+        "name": "xs:system"
+      },
+      {
+        "type": "xs:public",
+        "name": "xs:public"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:public": {
+    "type": "xs:simpleType",
+    "name": "xs:public",
+    "derivedFrom": [
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      }
+    ]
+  },
+  "xs:appinfo": {
+    "type": "xs:element",
+    "name": "xs:appinfo",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:anyURI",
+        "name": "xs:source"
+      },
+      {
+        "type": "xs:any",
+        "name": "xs:any",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType",
+        "mixed": "true"
+      }
+    ]
+  },
+  "xs:documentation": {
+    "type": "xs:element",
+    "name": "xs:documentation",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:attribute",
+        "ref": "xml:lang"
+      },
+      {
+        "type": "xs:anyURI",
+        "name": "xs:source"
+      },
+      {
+        "type": "xs:any",
+        "name": "xs:any",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType",
+        "mixed": "true"
+      }
+    ]
+  },
+  "xs:annotation": {
+    "type": "xs:element",
+    "name": "xs:annotation",
+    "derivedFrom": [
+      {
+        "type": "xs:ID",
+        "name": "xs:id"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:documentation"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:appinfo"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:openAttrs"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:XMLSchemaStructures": {
+    "type": "xs:notation",
+    "name": "xs:XMLSchemaStructures",
+    "public": "structures",
+    "system": "http://www.w3.org/2000/08/XMLSchema.xsd"
+  },
+  "xs:XML": {
+    "type": "xs:notation",
+    "name": "xs:XML",
+    "public": "REC-xml-19980210",
+    "system": "http://www.w3.org/TR/1998/REC-xml-19980210"
+  },
+  "xs:anyType": {
+    "type": "xs:complexType",
+    "name": "xs:anyType",
+    "mixed": "true",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:any",
+        "name": "xs:any",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      }
+    ]
+  },
+  "xs:string": {
+    "type": "xs:simpleType",
+    "name": "xs:string"
+  },
+  "hfp:minLength": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:minLength"
+  },
+  "hfp:maxLength": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:maxLength"
+  },
+  "hfp:pattern": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:pattern"
+  },
+  "hfp:enumeration": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:enumeration"
+  },
+  "hfp:whiteSpace": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:whiteSpace"
+  },
+  "hfp:ordered": {
+    "type": "hfp:hasProperty",
+    "name": "hfp:ordered",
+    "value": "false"
+  },
+  "hfp:bounded": {
+    "type": "hfp:hasProperty",
+    "name": "hfp:bounded",
+    "value": "false"
+  },
+  "hfp:cardinality": {
+    "type": "hfp:hasProperty",
+    "name": "hfp:cardinality",
+    "value": "finite"
+  },
+  "hfp:numeric": {
+    "type": "hfp:hasProperty",
+    "name": "hfp:numeric",
+    "value": "false"
+  },
+  "xs:restriction": {
+    "type": "xs:element",
+    "name": "xs:restriction",
+    "derivedFrom": [
+      {
+        "type": "xs:QName",
+        "name": "xs:base",
+        "use": "optional"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:simpleRestrictionModel"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:boolean": {
+    "type": "xs:simpleType",
+    "name": "xs:boolean"
+  },
+  "xs:float": {
+    "type": "xs:simpleType",
+    "name": "xs:float"
+  },
+  "hfp:maxInclusive": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:maxInclusive"
+  },
+  "hfp:maxExclusive": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:maxExclusive"
+  },
+  "hfp:minInclusive": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:minInclusive"
+  },
+  "hfp:minExclusive": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:minExclusive"
+  },
+  "xs:double": {
+    "type": "xs:simpleType",
+    "name": "xs:double"
+  },
+  "xs:decimal": {
+    "type": "xs:simpleType",
+    "name": "xs:decimal"
+  },
+  "hfp:fractionDigits": {
+    "type": "hfp:hasFacet",
+    "name": "hfp:fractionDigits"
+  },
+  "xs:duration": {
+    "type": "xs:simpleType",
+    "name": "xs:duration"
+  },
+  "xs:dateTime": {
+    "type": "xs:simpleType",
+    "name": "xs:dateTime"
+  },
+  "xs:time": {
+    "type": "xs:simpleType",
+    "name": "xs:time"
+  },
+  "xs:date": {
+    "type": "xs:simpleType",
+    "name": "xs:date"
+  },
+  "xs:gYearMonth": {
+    "type": "xs:simpleType",
+    "name": "xs:gYearMonth"
+  },
+  "xs:gYear": {
+    "type": "xs:simpleType",
+    "name": "xs:gYear"
+  },
+  "xs:gMonthDay": {
+    "type": "xs:simpleType",
+    "name": "xs:gMonthDay"
+  },
+  "xs:gDay": {
+    "type": "xs:simpleType",
+    "name": "xs:gDay"
+  },
+  "xs:gMonth": {
+    "type": "xs:simpleType",
+    "name": "xs:gMonth"
+  },
+  "xs:hexBinary": {
+    "type": "xs:simpleType",
+    "name": "xs:hexBinary"
+  },
+  "xs:base64Binary": {
+    "type": "xs:simpleType",
+    "name": "xs:base64Binary"
+  },
+  "xs:anyURI": {
+    "type": "xs:simpleType",
+    "name": "xs:anyURI"
+  },
+  "xs:QName": {
+    "type": "xs:simpleType",
+    "name": "xs:QName"
+  },
+  "xs:NOTATION": {
+    "type": "xs:simpleType",
+    "name": "xs:NOTATION"
+  },
+  "xs:normalizedString": {
+    "type": "xs:simpleType",
+    "name": "xs:normalizedString",
+    "derivedFrom": [
+      {
+        "type": "xs:whiteSpace",
+        "name": "xs:whiteSpace",
+        "value": "replace",
+        "id": "normalizedString.whiteSpace"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:string"
+      }
+    ]
+  },
+  "xs:token": {
+    "type": "xs:simpleType",
+    "name": "xs:token",
+    "derivedFrom": [
+      {
+        "type": "xs:whiteSpace",
+        "name": "xs:whiteSpace",
+        "value": "collapse",
+        "id": "token.whiteSpace"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:normalizedString"
+      }
+    ]
+  },
+  "xs:language": {
+    "type": "xs:simpleType",
+    "name": "xs:language",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*",
+        "id": "language.pattern"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      }
+    ]
+  },
+  "xs:IDREFS": {
+    "type": "xs:simpleType",
+    "name": "xs:IDREFS"
+  },
+  "xs:ENTITIES": {
+    "type": "xs:simpleType",
+    "name": "xs:ENTITIES"
+  },
+  "xs:NMTOKEN": {
+    "type": "xs:simpleType",
+    "name": "xs:NMTOKEN",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "\\c+",
+        "id": "NMTOKEN.pattern"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      }
+    ]
+  },
+  "xs:NMTOKENS": {
+    "type": "xs:simpleType",
+    "name": "xs:NMTOKENS"
+  },
+  "xs:Name": {
+    "type": "xs:simpleType",
+    "name": "xs:Name",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "\\i\\c*",
+        "id": "Name.pattern"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      }
+    ]
+  },
+  "xs:NCName": {
+    "type": "xs:simpleType",
+    "name": "xs:NCName",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "[\\i-[:]][\\c-[:]]*",
+        "id": "NCName.pattern"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:Name"
+      }
+    ]
+  },
+  "xs:ID": {
+    "type": "xs:simpleType",
+    "name": "xs:ID",
+    "derivedFrom": [
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NCName"
+      }
+    ]
+  },
+  "xs:IDREF": {
+    "type": "xs:simpleType",
+    "name": "xs:IDREF",
+    "derivedFrom": [
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NCName"
+      }
+    ]
+  },
+  "xs:ENTITY": {
+    "type": "xs:simpleType",
+    "name": "xs:ENTITY",
+    "derivedFrom": [
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NCName"
+      }
+    ]
+  },
+  "xs:integer": {
+    "type": "xs:simpleType",
+    "name": "xs:integer",
+    "derivedFrom": [
+      {
+        "type": "xs:pattern",
+        "name": "xs:pattern",
+        "value": "[\\-+]?[0-9]+"
+      },
+      {
+        "type": "xs:fractionDigits",
+        "name": "xs:fractionDigits",
+        "value": "0",
+        "fixed": "true",
+        "id": "integer.fractionDigits"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:decimal"
+      }
+    ]
+  },
+  "xs:nonPositiveInteger": {
+    "type": "xs:simpleType",
+    "name": "xs:nonPositiveInteger",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "0",
+        "id": "nonPositiveInteger.maxInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:integer"
+      }
+    ]
+  },
+  "xs:negativeInteger": {
+    "type": "xs:simpleType",
+    "name": "xs:negativeInteger",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "-1",
+        "id": "negativeInteger.maxInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:nonPositiveInteger"
+      }
+    ]
+  },
+  "xs:long": {
+    "type": "xs:simpleType",
+    "name": "xs:long"
+  },
+  "xs:int": {
+    "type": "xs:simpleType",
+    "name": "xs:int",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "2147483647",
+        "id": "int.maxInclusive"
+      },
+      {
+        "type": "xs:minInclusive",
+        "name": "xs:minInclusive",
+        "value": "-2147483648",
+        "id": "int.minInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:long"
+      }
+    ]
+  },
+  "xs:short": {
+    "type": "xs:simpleType",
+    "name": "xs:short",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "32767",
+        "id": "short.maxInclusive"
+      },
+      {
+        "type": "xs:minInclusive",
+        "name": "xs:minInclusive",
+        "value": "-32768",
+        "id": "short.minInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:int"
+      }
+    ]
+  },
+  "xs:byte": {
+    "type": "xs:simpleType",
+    "name": "xs:byte",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "127",
+        "id": "byte.maxInclusive"
+      },
+      {
+        "type": "xs:minInclusive",
+        "name": "xs:minInclusive",
+        "value": "-128",
+        "id": "byte.minInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:short"
+      }
+    ]
+  },
+  "xs:nonNegativeInteger": {
+    "type": "xs:simpleType",
+    "name": "xs:nonNegativeInteger",
+    "derivedFrom": [
+      {
+        "type": "xs:minInclusive",
+        "name": "xs:minInclusive",
+        "value": "0",
+        "id": "nonNegativeInteger.minInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:integer"
+      }
+    ]
+  },
+  "xs:unsignedLong": {
+    "type": "xs:simpleType",
+    "name": "xs:unsignedLong"
+  },
+  "xs:unsignedInt": {
+    "type": "xs:simpleType",
+    "name": "xs:unsignedInt",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "4294967295",
+        "id": "unsignedInt.maxInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:unsignedLong"
+      }
+    ]
+  },
+  "xs:unsignedShort": {
+    "type": "xs:simpleType",
+    "name": "xs:unsignedShort",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "65535",
+        "id": "unsignedShort.maxInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:unsignedInt"
+      }
+    ]
+  },
+  "xs:unsignedByte": {
+    "type": "xs:simpleType",
+    "name": "xs:unsignedByte",
+    "derivedFrom": [
+      {
+        "type": "xs:maxInclusive",
+        "name": "xs:maxInclusive",
+        "value": "255",
+        "id": "unsignedByte.maxInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:unsignedShort"
+      }
+    ]
+  },
+  "xs:positiveInteger": {
+    "type": "xs:simpleType",
+    "name": "xs:positiveInteger",
+    "derivedFrom": [
+      {
+        "type": "xs:minInclusive",
+        "name": "xs:minInclusive",
+        "value": "1",
+        "id": "positiveInteger.minInclusive"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:nonNegativeInteger"
+      }
+    ]
+  },
+  "xs:derivationControl": {
+    "type": "xs:simpleType",
+    "name": "xs:derivationControl",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "union"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "list"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "restriction"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "extension"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "substitution"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NMTOKEN"
+      }
+    ]
+  },
+  "xs:simpleDerivation": {
+    "type": "xs:group",
+    "name": "xs:simpleDerivation",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:union"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:list"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:restriction"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:simpleDerivationSet": {
+    "type": "xs:simpleType",
+    "name": "xs:simpleDerivationSet",
+    "derivedFrom": [
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "restriction"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "union"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "list"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:derivationControl"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:list",
+        "name": "xs:list"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "#all"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:token"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:union",
+        "name": "xs:union"
+      }
+    ]
+  },
+  "xs:simpleType": {
+    "type": "xs:topLevelSimpleType",
+    "name": "xs:simpleType"
+  },
+  "xs:topLevelSimpleType": {
+    "type": "xs:complexType",
+    "name": "xs:topLevelSimpleType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:NCName",
+        "name": "xs:name",
+        "use": "required"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:simpleDerivation"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:simpleType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:localSimpleType": {
+    "type": "xs:complexType",
+    "name": "xs:localSimpleType",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:final",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:name",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:simpleDerivation"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:simpleType"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:facets": {
+    "type": "xs:group",
+    "name": "xs:facets",
+    "derivedFrom": [
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:pattern"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:whiteSpace"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:enumeration"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:maxLength"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:minLength"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:length"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:fractionDigits"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:totalDigits"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:maxInclusive"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:maxExclusive"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:minInclusive"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:minExclusive"
+      },
+      {
+        "type": "xs:choice",
+        "name": "xs:choice"
+      }
+    ]
+  },
+  "xs:simpleRestrictionModel": {
+    "type": "xs:group",
+    "name": "xs:simpleRestrictionModel",
+    "derivedFrom": [
+      {
+        "type": "xs:group",
+        "name": "xs:group",
+        "ref": "xs:facets",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      }
+    ]
+  },
+  "xs:list": {
+    "type": "xs:element",
+    "name": "xs:list",
+    "derivedFrom": [
+      {
+        "type": "xs:QName",
+        "name": "xs:itemType",
+        "use": "optional"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:union": {
+    "type": "xs:element",
+    "name": "xs:union",
+    "derivedFrom": [
+      {
+        "type": "xs:list",
+        "name": "xs:list",
+        "itemType": "xs:QName"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:memberTypes",
+        "use": "optional"
+      },
+      {
+        "type": "xs:localSimpleType",
+        "name": "xs:simpleType",
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:facet": {
+    "type": "xs:complexType",
+    "name": "xs:facet",
+    "derivedFrom": [
+      {
+        "type": "xs:boolean",
+        "name": "xs:fixed",
+        "use": "optional",
+        "default": "false"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:value",
+        "use": "required"
+      },
+      {
+        "type": "xs:extension",
+        "name": "xs:extension",
+        "base": "xs:annotated"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:noFixedFacet": {
+    "type": "xs:complexType",
+    "name": "xs:noFixedFacet",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:fixed",
+        "use": "prohibited"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:facet"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:minExclusive": {
+    "type": "xs:facet",
+    "name": "xs:minExclusive"
+  },
+  "xs:minInclusive": {
+    "type": "xs:facet",
+    "name": "xs:minInclusive"
+  },
+  "xs:maxExclusive": {
+    "type": "xs:facet",
+    "name": "xs:maxExclusive"
+  },
+  "xs:maxInclusive": {
+    "type": "xs:facet",
+    "name": "xs:maxInclusive"
+  },
+  "xs:numFacet": {
+    "type": "xs:complexType",
+    "name": "xs:numFacet",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:nonNegativeInteger",
+        "name": "xs:value",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:facet"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      }
+    ]
+  },
+  "xs:totalDigits": {
+    "type": "xs:element",
+    "name": "xs:totalDigits",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:positiveInteger",
+        "name": "xs:value",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:numFacet"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:fractionDigits": {
+    "type": "xs:numFacet",
+    "name": "xs:fractionDigits"
+  },
+  "xs:length": {
+    "type": "xs:numFacet",
+    "name": "xs:length"
+  },
+  "xs:minLength": {
+    "type": "xs:numFacet",
+    "name": "xs:minLength"
+  },
+  "xs:maxLength": {
+    "type": "xs:numFacet",
+    "name": "xs:maxLength"
+  },
+  "xs:enumeration": {
+    "type": "xs:noFixedFacet",
+    "name": "xs:enumeration"
+  },
+  "xs:whiteSpace": {
+    "type": "xs:element",
+    "name": "xs:whiteSpace",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "collapse"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "replace"
+      },
+      {
+        "type": "xs:enumeration",
+        "name": "xs:enumeration",
+        "value": "preserve"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:NMTOKEN"
+      },
+      {
+        "type": "xs:simpleType",
+        "name": "xs:simpleType"
+      },
+      {
+        "type": "xs:attribute",
+        "name": "xs:value",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:facet"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  },
+  "xs:pattern": {
+    "type": "xs:element",
+    "name": "xs:pattern",
+    "derivedFrom": [
+      {
+        "type": "xs:anyAttribute",
+        "name": "xs:anyAttribute",
+        "namespace": "##other",
+        "processContents": "lax"
+      },
+      {
+        "type": "xs:string",
+        "name": "xs:value",
+        "use": "required"
+      },
+      {
+        "type": "xs:element",
+        "name": "xs:element",
+        "ref": "xs:annotation",
+        "minOccurs": "0"
+      },
+      {
+        "type": "xs:sequence",
+        "name": "xs:sequence"
+      },
+      {
+        "type": "xs:restriction",
+        "name": "xs:restriction",
+        "base": "xs:noFixedFacet"
+      },
+      {
+        "type": "xs:complexContent",
+        "name": "xs:complexContent"
+      },
+      {
+        "type": "xs:complexType",
+        "name": "xs:complexType"
+      }
+    ]
+  }
+}
+
